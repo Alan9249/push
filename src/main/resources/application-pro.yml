@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: push-message
+server:
+  port: 9999
+
+getPushMessageUrl: https://zhl.lululuye.xyz/wpark/message-push/getOnePushMessage
+updatePushMessageUrl: https://zhl.lululuye.xyz/wpark/message-push/updatePushMessageStatus
+
+ios:
+  p12: E:/test.p12
+#  p12: /root/wpark/cer.p12
+  password: Password123
+
+android:
+  appKey: ab84f70ce029e9c17b864a4d
+  secret: bf421c747aab701368ca0a95

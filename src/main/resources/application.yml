@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: pro
+
+logging:
+  level:
+    com:
+      lwh:
+        push: info
