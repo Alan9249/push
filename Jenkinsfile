@@ -1,8 +1,8 @@
 pipeline {
   agent any
   tools {
-        jdk 'jdk-8u111'
-        maven 'mvn-3.6.3'
+        jdk 'jdk'
+        maven 'maven'
     }
   stages {
     stage('GetCode') {
