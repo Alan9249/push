@@ -9,7 +9,8 @@ pipeline {
 
     stage('Package') {
       steps {
-        sh 'mvn package'
+        tool(name: 'jdk', type: '\'jdk-8u111\'')
+        tool(name: 'maven', type: '\'mvn-3.6.3\'')
       }
     }
 
