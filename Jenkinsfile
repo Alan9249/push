@@ -14,25 +14,22 @@ pipeline {
     }
 
     stage('SSH transfer') {
-        steps([$class: 'BapSshPromotionPublisherPlugin']) {
-            sshPublisher(
-                continueOnError: false, failOnError: true,
-                publishers: [
-                    sshPublisherDesc(
-                        configName: "jiangli",
-                        verbose: true,
-                        transfers: [
-                            sshTransfer(sourceFiles: "target/**",)
-                        ]
-                    )
-                ]
-            )
+      steps {
+        sshPublisher(failOnError: true, publishers: [
+                              sshPublisherDesc(
+                                    configName: "jiangli",
+                                    verbose: true,
+                                    transfers: [
+                                          sshTransfer(sourceFiles: "target/**",)
+                                      ]
+                                  )
+                              ])
+            }
+          }
+
         }
-    }
-  }
-  
-  tools {
-    jdk 'jdk'
-    maven 'maven'
-  }
-}
+        tools {
+          jdk 'jdk'
+          maven 'maven'
+        }
+      }
