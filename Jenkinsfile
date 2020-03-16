@@ -13,8 +13,7 @@ pipeline {
       }
     }
 
-  }
-  stage('SSH transfer') {
+    stage('SSH transfer') {
         steps([$class: 'BapSshPromotionPublisherPlugin']) {
             sshPublisher(
                 continueOnError: false, failOnError: true,
@@ -30,6 +29,8 @@ pipeline {
             )
         }
     }
+  }
+  
   tools {
     jdk 'jdk'
     maven 'maven'
